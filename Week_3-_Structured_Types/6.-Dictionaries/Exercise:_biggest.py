@@ -34,8 +34,12 @@ def biggest(aDict):
         return result
     else:
         for i in aDict.keys():
+            if aDict[i] == [] and len(aDict.keys())<2:
+                for key in aDict.keys():
+                    return str(key)
             if len(aDict[i]) > counter:
                 result = i
+                counter += len(aDict[i])
     return result
 
 # Correct
